@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW3 → FSD v14 Lite | Countdown</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+        
+        :root {
+            --tesla-red: #e82127;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .tesla-bg {
+            background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+        }
+        
+        .countdown-digit {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(232, 33, 39, 0.3);
+        }
+        
+        .glow {
+            text-shadow: 0 0 30px rgba(232, 33, 39, 0.6);
+        }
+    </style>
+</head>
+<body class="tesla-bg text-white min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="border-b border-white/10 bg-black/70 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-x-3">
+                <i class="fa-brands fa-tesla text-4xl text-white"></i>
+                <div>
+                    <span class="text-2xl font-bold tracking-tighter">HW3</span>
+                    <span class="text-[#e82127] font-bold text-2xl tracking-tighter">FSD v14 LITE</span>
+                </div>
+            </div>
+            <div class="text-sm font-medium px-4 py-2 bg-white/10 rounded-3xl flex items-center gap-x-2">
+                <div class="w-2 h-2 bg-[#e82127] rounded-full animate-pulse"></div>
+                END OF JUNE 2026 • OFFICIAL TESLA CONFIRMED
+            </div>
+            <a href="https://www.tesla.com" target="_blank" 
+               class="flex items-center gap-x-2 text-sm font-semibold hover:text-[#e82127] transition-colors">
+                <span>TESLA.COM</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto px-6 py-12 w-full">
+        <!-- Hero Countdown -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-x-2 bg-white/10 text-white text-sm font-medium px-6 py-3 rounded-3xl mb-6 border border-white/20">
+                <i class="fa-solid fa-car-side"></i>
+                OVER 3 MILLION HW3 VEHICLES • FSD v14 LITE ROLLOUT
+            </div>
+            
+            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-4 glow">
+                HW3 TESLA CARS GET<br>
+                <span class="text-[#e82127]">FSD v14 LITE</span>
+            </h1>
+            
+            <p class="text-xl text-white/70 max-w-2xl mx-auto mb-12">
+                Tesla officially confirmed during Q1 2026 earnings: 
+                Full v14 feature parity for Hardware 3 — coming by end of June 2026.
+            </p>
+
+            <!-- Countdown -->
+            <div id="countdown" class="grid grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="mt-8 flex justify-center gap-x-8 text-white/60 text-sm">
+                <div class="flex items-center gap-x-2">
+                    <i class="fa-solid fa-calendar"></i>
+                    JUNE 30, 2026
+                </div>
+                <div class="h-3 w-px bg-white/30"></div>
+                <div>2 months until the biggest HW3 upgrade in years</div>
+            </div>
+        </div>
+
+        <!-- What You'll Get -->
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
+                <h2 class="text-3xl font-semibold mb-8 flex items-center gap-x-3">
+                    <span class="text-[#e82127]">WHAT'S COMING TO YOUR HW3</span>
+                    <span class="text-xs px-3 py-1 bg-[#e82127]/10 text-[#e82127] rounded-3xl font-medium">v14 LITE</span>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex gap-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-2xl bg-[#e82127]/10 flex items-center justify-center text-[#e82127]">
+                                <i class="fa-solid fa-car"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Start from Park</h3>
+                                <p class="text-white/70">Fully autonomous departure and navigation from parking spots</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-2xl bg-[#e82127]/10 flex items-center justify-center text-[#e82127]">
+                                <i class="fa-solid fa-road"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Next-Gen City Streets &amp; Highways</h3>
+                                <p class="text-white/70">All major v14 behaviors — smarter intersections, traffic handling, and lane changes</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex gap-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-2xl bg-[#e82127]/10 flex items-center justify-center text-[#e82127]">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">HW3-Optimized AI</h3>
+                                <p class="text-white/70">Lightweight version of the latest neural nets — massive leap from v12.6.4</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-2xl bg-[#e82127]/10 flex items-center justify-center text-[#e82127]">
+                                <i class="fa-solid fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold">Daily Driving Revolution</h3>
+                                <p class="text-white/70">No unsupervised FSD, but the biggest software leap HW3 has ever seen</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-white/10 text-center">
+                    <a href="https://www.notateslaapp.com/news/4038/tesla-announces-fsd-v14-lite-features-and-release-timeline" 
+                       target="_blank"
+                       class="inline-flex items-center gap-x-2 text-[#e82127] hover:text-white text-sm font-medium">
+                        FULL STORY FROM TESLA Q1 2026 EARNINGS CALL
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/80 py-8 text-center text-white/40 text-xs border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            Built as a fun community project • Not affiliated with Tesla • Countdown to June 30, 2026 (official "by end of June" target)
+            <div class="mt-4 flex justify-center gap-x-6">
+                <a href="#" onclick="shareToX()" class="hover:text-white flex items-center gap-x-1">
+                    <i class="fa-brands fa-x-twitter"></i> Share on X
+                </a>
+                <a href="https://github.com" target="_blank" class="hover:text-white">Host this on GitHub Pages (free)</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded
+        function initTailwind() {
+            tailwind.config = {
+                content: [],
+                theme: {
+                    extend: {}
+                }
+            }
+        }
+
+        // Countdown logic
+        function startCountdown() {
+            // Target: June 30, 2026 23:59:59 PDT (end of June)
+            const targetDate = new Date("2026-06-30T23:59:59-07:00").getTime();
+            
+            const countdownEl = document.getElementById("countdown");
+            
+            function updateCountdown() {
+                const now = Date.now();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    countdownEl.innerHTML = `
+                        <div class="col-span-4 text-center py-8">
+                            <div class="text-5xl font-bold text-[#e82127]">FSD v14 LITE IS HERE!</div>
+                            <p class="mt-4 text-xl">Check your Tesla app for the update</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                countdownEl.innerHTML = `
+                    <div class="countdown-digit rounded-3xl p-6 text-center">
+                        <div class="text-7xl font-bold text-white">${days}</div>
+                        <div class="text-xs uppercase tracking-[2px] mt-2 text-white/50">DAYS</div>
+                    </div>
+                    <div class="countdown-digit rounded-3xl p-6 text-center">
+                        <div class="text-7xl font-bold text-white">${hours}</div>
+                        <div class="text-xs uppercase tracking-[2px] mt-2 text-white/50">HOURS</div>
+                    </div>
+                    <div class="countdown-digit rounded-3xl p-6 text-center">
+                        <div class="text-7xl font-bold text-white">${minutes}</div>
+                        <div class="text-xs uppercase tracking-[2px] mt-2 text-white/50">MINUTES</div>
+                    </div>
+                    <div class="countdown-digit rounded-3xl p-6 text-center">
+                        <div class="text-7xl font-bold text-white">${seconds}</div>
+                        <div class="text-xs uppercase tracking-[2px] mt-2 text-white/50">SECONDS</div>
+                    </div>
+                `;
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        // Share to X
+        function shareToX() {
+            const text = encodeURIComponent("HW3 Tesla owners — FSD v14 Lite drops end of June! Countdown live 👇");
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://x.com/intent/tweet?text=${text}&url=${url}`, "_blank");
+        }
+
+        // Initialize everything
+        window.onload = function() {
+            initTailwind();
+            startCountdown();
+            
+            // Keyboard shortcut easter egg
+            console.log('%c🚀 HW3 FSD v14 Lite countdown ready. Press "C" to copy embed code.', 'color:#e82127; font-weight:bold');
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'c' || e.key === 'C') {
+                    navigator.clipboard.writeText('<iframe src="' + window.location.href + '" width="100%" height="800" frameborder="0"></iframe>');
+                    alert("✅ Embed code copied to clipboard!");
+                }
+            });
+        };
+    </script>
+</body>
+</html>
